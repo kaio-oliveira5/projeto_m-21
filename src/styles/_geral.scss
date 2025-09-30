@@ -6,8 +6,7 @@
     scroll-behavior: smooth; 
 }
 
-/* ESTA É A CORREÇÃO CHAVE: Diz ao navegador para IGNORAR qualquer elemento 
-que ultrapasse a largura da tela (como o nosso carrossel) e não gerar a barra global. */
+
 html {
     overflow-x: hidden !important;
 }
