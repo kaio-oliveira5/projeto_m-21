@@ -61,6 +61,12 @@
     padding: 20px 50px; 
 }
 
+@media (max-width: 600px) {
+    /* Ajusta o padding do grid para o card poder ocupar 100% da tela */
+    .personagens-grid {
+        padding: 20px 0; 
+    }
+
     .ator-card {
         
         flex: 0 0 250px; 
