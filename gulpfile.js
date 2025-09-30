@@ -7,17 +7,17 @@ function compileSass() {
     return gulp.src('./src/styles/main.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(concat('style.css'))
-        .pipe(gulp.dest('./dist')); 
+        .pipe(gulp.dest('dist')); 
 }
 
 // 2. Cópia do HTML: index.html (raiz) -> dist/index.html
 function copyHtml() {
-    return gulp.src('./index.html').pipe(gulp.dest('./dist'));
+    return gulp.src('./index.html').pipe(gulp.dest('dist'));
 }
 
 // 3. Cópia do JavaScript: src/scripts/main.js -> dist/main.js
 function copyJs() {
-    return gulp.src('./src/scripts/main.js').pipe(gulp.dest('./dist'));
+    return gulp.src('./src/scripts/main.js').pipe(gulp.dest('dist'));
 }
 
 // Tarefa WATCH: Monitoramento em tempo real

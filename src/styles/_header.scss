@@ -1,5 +1,5 @@
 .hero {
-    // Usamos uma URL de placeholder ou você pode colocar a URL de uma imagem real
+    
     background-image: url('https://i.ytimg.com/vi/vSGt9jQmbA8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCnJq4TqJ2cgwZbySRe09LchzPIkg');
     background-size: cover;
     background-position: center 40% ;
@@ -9,7 +9,7 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    margin-top: -70px; // Corrige o padding-top do body para que o hero comece no topo
+    margin-top: -70px; 
 }
 .hero::after {
     content: '';
