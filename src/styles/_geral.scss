@@ -1,0 +1,76 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; 
+}
+
+/* ESTA É A CORREÇÃO CHAVE: Diz ao navegador para IGNORAR qualquer elemento 
+que ultrapasse a largura da tela (como o nosso carrossel) e não gerar a barra global. */
+html {
+    overflow-x: hidden !important;
+}
+
+body {
+    font-family: $fonte-principal;
+    background-color: $fundo-principal;
+    color: $texto-primario;
+    padding-top: 70px; 
+    overflow-x: hidden !important; /* Garantia extra no body */
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.section {
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid rgba($neon-secundario, 0.1); 
+}
+.title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: $neon-secundario; 
+    text-shadow: 0 0 5px rgba($neon-secundario, 0.5);
+}
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    border: 1px solid transparent; // Previne "pulo" no hover
+}
+.btn--primary {
+    background-color: $neon-primario;
+    color: $texto-primario;
+    &:hover {
+        background-color: lighten($neon-primario, 10%);
+        box-shadow: 0 0 15px $neon-primario;
+    }
+}
+.btn--secondary {
+    background-color: $neon-secundario;
+    color: $fundo-principal;
+    &:hover {
+        background-color: $fundo-principal;
+        color: $neon-secundario;
+        border-color: $neon-secundario;
+        box-shadow: 0 0 15px $neon-secundario;
+    }
+}
+.btn--large {
+    padding: 18px 40px;
+    font-size: 1.2em;
+}
+footer {
+    padding: 20px 0;
+    background-color: $fundo-footer;
+    font-size: 0.8em;
+}

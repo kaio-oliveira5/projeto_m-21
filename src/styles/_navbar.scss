@@ -1,0 +1,75 @@
+// src/styles/_navbar.scss (Versão com fundo escuro fixo)
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.95); /* Fundo escuro fixo */
+    padding: 15px 0;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra fixo */
+}
+
+.navbar__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    text-decoration: none;
+    color: $neon-primario; 
+    text-shadow: 0 0 5px $neon-primario;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.navbar__links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    
+    a {
+        text-decoration: none;
+        color: $texto-primario;
+        font-weight: 400;
+        text-transform: uppercase;
+        position: relative;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: $neon-secundario;
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: $neon-secundario;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+            box-shadow: 0 0 5px $neon-secundario;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar__links {
+        display: none; 
+    }
+    .navbar__content {
+        justify-content: center; 
+    }
+}

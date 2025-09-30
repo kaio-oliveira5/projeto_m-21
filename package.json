@@ -1,0 +1,18 @@
+{
+    "name": "projeto-velozes-final",
+    "version": "1.0.0",
+    "description": "Landing Page Fast & Furious com Gulp e SCSS",
+    "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+},
+    "keywords": ["gulp", "scss", "vercel"],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.72.0",
+    "gulp-concat": "^2.6.1"
+}
+}

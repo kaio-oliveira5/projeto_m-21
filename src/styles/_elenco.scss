@@ -1,0 +1,74 @@
+// src/styles/_elenco.scss
+
+/* ---------------------------------- */
+/* ANIMAÇÃO DE ENTRADA (USADA PELO JS) */
+/* ---------------------------------- */
+
+// Classe inicial (Oculta e deslocada)
+.animatable {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+// Classe ativada pelo JS (Visível e na posição final)
+.animatable.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Atrasos para o efeito cascata nos cards de Personagens/Elenco */
+.ator-card:nth-child(2) { transition-delay: 0.1s; }
+.ator-card:nth-child(3) { transition-delay: 0.2s; }
+.ator-card:nth-child(4) { transition-delay: 0.3s; }
+.ator-card:nth-child(5) { transition-delay: 0.4s; }
+.ator-card:nth-child(6) { transition-delay: 0.5s; }
+.ator-card:nth-child(7) { transition-delay: 0.6s; }
+
+
+/* ---------------------------------- */
+/* ESTILO GERAL DOS CARDS */
+/* ---------------------------------- */
+
+.ator-card {
+    @extend .animatable; // Usa as regras de animação
+    
+    background-color: $fundo-card;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; // Adiciona transição
+    
+    &:hover {
+        box-shadow: 0 0 20px rgba($neon-secundario, 0.5);
+    }
+}
+
+
+/* ---------------------------------- */
+/* ESTILO DOS POSTERS DE FILMES */
+/* ---------------------------------- */
+
+.filme-card {
+    @extend .animatable; // Usa as regras de animação
+
+    /* Atrasos para a animação cascata nos FILMES (mais rápido) */
+    @for $i from 1 through 11 {
+        &:nth-child(#{$i}) {
+            transition-delay: 0.05s * $i;
+        }
+    }
+    
+    // O HOVER do filme é definido no _sec_conteudo, mas o @extend é crucial aqui!
+}
+
+
+/* ---------------------------------- */
+/* LIMPEZA DA SCROLLBAR HORIZONTAL */
+/* ---------------------------------- */
+
+.personagens-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+.personagens-scroll-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
