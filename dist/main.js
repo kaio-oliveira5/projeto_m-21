@@ -1,6 +1,6 @@
 
 function initAnimaOnScroll() {
-    // CORREÇÃO: Seleciona TODOS os elementos que precisam de animação.
+    
     const targets = document.querySelectorAll('.ator-card, .filme-card'); 
     const animationClass = 'is-visible';
 
@@ -28,9 +28,6 @@ function initAnimaOnScroll() {
 }
 
 
-// -----------------------------------------------------
-// 2. FUNÇÃO DE ESTILO DO NAVBAR AO ROLAR (Transparência)
-// -----------------------------------------------------
 
 function navbarScroll() {
     const navbar = document.querySelector('.navbar');
