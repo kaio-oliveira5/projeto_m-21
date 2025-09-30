@@ -46,11 +46,14 @@
 
 
 .personagens-scroll-container {
-    overflow-x: hidden; 
-    scroll-behavior: smooth; 
+    /* CORREÇÃO 1: Permite a rolagem e força o 'snap' */
+    overflow-x: scroll; 
+    scroll-behavior: smooth;
     
-    width: 100vw; 
-    margin-left: calc(50% - 50vw); 
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    
+    scroll-snap-type: x mandatory; 
 }
 
 .personagens-grid {
@@ -61,41 +64,35 @@
     padding: 20px 50px; 
 }
 
-@media (max-width: 600px) {
-    /* Ajusta o padding do grid para o card poder ocupar 100% da tela */
-    .personagens-grid {
-        padding: 20px 0; 
+/* O .ator-card FICA AQUI FORA DA MEDIA QUERY */
+.ator-card {
+    
+    flex: 0 0 250px; 
+    max-width: 250px;
+    text-align: center;
+    padding: 0; 
+    white-space: normal;
+
+    /* CORREÇÃO 2: Garante que ele seja o ponto de parada */
+    scroll-snap-align: start; 
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid $neon-primario;
+        box-shadow: 0 0 10px rgba($neon-primario, 0.5);
+        margin-bottom: 15px;
     }
 
-    .ator-card {
-        
-        flex: 0 0 250px; 
-        max-width: 250px;
-        text-align: center;
-        padding: 0; 
-        white-space: normal;
-
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid $neon-primario;
-            box-shadow: 0 0 10px rgba($neon-primario, 0.5);
-            margin-bottom: 15px;
-        }
-
-        h3 {
-            font-size: 1.2em;
-            color: $neon-secundario;
-        }
-        p {
-            font-size: 0.9em;
-        }
+    h3 {
+        font-size: 1.2em;
+        color: $neon-secundario;
     }
-
-    .personagens-wrapper {
-    position: relative; 
+    p {
+        font-size: 0.9em;
+    }
 }
 
 .nav-btn {
@@ -161,5 +158,28 @@
             background-color: darken($fundo-card, 5%);
             flex-shrink: 0; 
         }
+    }
+}
+
+/* CORREÇÃO 3: MEDIA QUERY NO FINAL PARA SOBREPOR AS REGRAS */
+@media (max-width: 600px) {
+    /* Ajusta o padding lateral do grid para o card poder ocupar 100% da tela */
+    .personagens-grid {
+        padding: 20px 0; 
+    }
+
+    /* ESSENCIAL: Garante que cada card ocupe a largura total da tela no mobile */
+    .ator-card {
+        /* Define a largura como 100% da viewport e subtrai o espaçamento (gap) */
+        flex: 0 0 calc(100vw - 30px); 
+        max-width: calc(100vw - 30px);
+        
+        /* Adiciona um padding interno para que o conteúdo não cole na borda da tela */
+        padding: 0 15px; 
+    }
+    
+    /* Esconde os botões de navegação lateral (setas) no mobile */
+    .nav-btn {
+        display: none;
     }
 }
