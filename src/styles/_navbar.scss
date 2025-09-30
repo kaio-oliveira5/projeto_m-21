@@ -1,13 +1,13 @@
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0.95); /* Fundo escuro fixo */
+    background-color: rgba(0, 0, 0, 0.95); 
     padding: 15px 0;
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra fixo */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
 }
 
 .navbar__content {

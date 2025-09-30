@@ -14,7 +14,6 @@ function initAnimaOnScroll() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add(animationClass);
-                // Parar de observar para rodar apenas uma vez
                 observer.unobserve(entry.target);
             }
         });

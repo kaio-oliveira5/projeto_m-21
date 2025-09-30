@@ -14,7 +14,6 @@ function initAnimaOnScroll() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add(animationClass);
-                // Parar de observar para rodar apenas uma vez
                 observer.unobserve(entry.target);
             }
         });
@@ -46,6 +45,7 @@ function navbarScroll() {
 function initCarrossel() {
     const scrollContainer = document.querySelector('.personagens-scroll-container');
     
+    
     if (!scrollContainer) return; 
 
     const prevBtn = document.getElementById('prevBtn');
@@ -54,14 +54,17 @@ function initCarrossel() {
     
     const scrollAmount = 840; 
 
+    
     nextBtn.addEventListener('click', () => {
         scrollContainer.scrollLeft += scrollAmount;
     });
 
+    
     prevBtn.addEventListener('click', () => {
         scrollContainer.scrollLeft -= scrollAmount;
     });
 
+    
     const cards = document.querySelectorAll('.ator-card');
     
     scrollContainer.addEventListener('scroll', () => {
@@ -72,6 +75,7 @@ function initCarrossel() {
             const cardStart = card.offsetLeft;
             const cardEnd = cardStart + card.offsetWidth;
 
+            
             if (cardEnd < viewportStart + 100 || cardStart > viewportEnd - 100) {
                 card.style.opacity = '0.5';
                 card.style.transform = 'scale(0.95)';
@@ -81,13 +85,16 @@ function initCarrossel() {
             }
         });
     });
-
+    
     scrollContainer.dispatchEvent(new Event('scroll'));
 }
 
 
+
+
 document.addEventListener('DOMContentLoaded', () => {
     initAnimaOnScroll(); 
+    
     navbarScroll(); 
     initCarrossel(); 
 });

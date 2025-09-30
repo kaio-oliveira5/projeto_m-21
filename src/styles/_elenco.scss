@@ -22,11 +22,11 @@
 
 
 .ator-card {
-    @extend .animatable; // Usa as regras de animação
+    @extend .animatable; 
     
     background-color: $fundo-card;
     border-radius: 8px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease; // Adiciona transição
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
     
     &:hover {
         box-shadow: 0 0 20px rgba($neon-secundario, 0.5);
@@ -37,7 +37,7 @@
 
 
 .filme-card {
-    @extend .animatable; // Usa as regras de animação
+    @extend .animatable; 
 
  
     @for $i from 1 through 11 {

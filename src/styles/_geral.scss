@@ -16,7 +16,7 @@ body {
     background-color: $fundo-principal;
     color: $texto-primario;
     padding-top: 70px; 
-    overflow-x: hidden !important; /* Garantia extra no body */
+    overflow-x: hidden !important; 
 }
 
 .container {
@@ -44,7 +44,7 @@ body {
     border-radius: 5px;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    border: 1px solid transparent; // Previne "pulo" no hover
+    border: 1px solid transparent; 
 }
 .btn--primary {
     background-color: $neon-primario;
